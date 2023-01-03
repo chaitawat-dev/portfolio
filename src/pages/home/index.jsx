@@ -1,6 +1,25 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
+    // console.log("%c Hi! ", "background: #222; color: #bada55");
+    // const emoji = ["💩", "👯‍", "😸", "🏄", "🚀", "🔥", "🎉", "😄", "🦁"];
+    // function randomEmoji() {
+    //     let random = Math.floor(Math.random() * emoji.length);
+    //     return emoji[random];
+    // }
+    // console.log("hello %s!", randomEmoji());
+
+    const style = [
+        "background: #000",
+        "color: #35ffff",
+        "padding: 10px 20px",
+        "line-height: 500px",
+        "text-shadow: 0px 0px 10px #35ffff",
+    ].join(";");
+
+    console.log("%c ..... Coded with ♥️ by Chaitawat ......", style);
+
     const firstName = "Chaitawat".split("");
     const lastName = "Hongboon".split("");
     return (
@@ -9,14 +28,18 @@ export default function Home() {
                 <div className="flex h-full flex-col space-y-4">
                     <h3 className="font-thin ">Hi, my name is</h3>
                     <div className=" leading-normal">
-                        <div className="fullname B mr-8">
+                        <div className="firstName B mr-8">
                             {firstName.map((char) => (
-                                <span className="btn">{char}</span>
+                                <span key={uuidv4()} className="btn">
+                                    {char}
+                                </span>
                             ))}
                         </div>
-                        <div className="fullname B ">
+                        <div className="lastName B ">
                             {lastName.map((char) => (
-                                <span className="btn">{char}</span>
+                                <span key={uuidv4()} className="btn">
+                                    {char}
+                                </span>
                             ))}
                         </div>
                     </div>
